@@ -55,7 +55,7 @@ public class dealMainActivity extends ActionBarActivity {
         button.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View arg0, MotionEvent arg1) {
-                //moveButton();
+                moveButton();
                 button.setPressed(arg1.getAction() == MotionEvent.ACTION_DOWN);
                 return true;
             }
@@ -81,10 +81,9 @@ public class dealMainActivity extends ActionBarActivity {
     }
 
     public void moveButton(){
-        /*View button = findViewById(R.id.imageButton);
+        View button = findViewById(R.id.imageButton);
         Animation anim = AnimationUtils.loadAnimation(this,R.anim.push_button);
-        button.startAnimation(anim);*/
-        ((AnimationDrawable)findViewById(R.id.imageButton).getBackground()).start();
+        button.startAnimation(anim);
     }
 
     @Override
