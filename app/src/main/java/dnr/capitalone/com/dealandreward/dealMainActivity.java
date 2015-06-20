@@ -3,6 +3,7 @@ package dnr.capitalone.com.dealandreward;
 import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.graphics.Typeface;
+import android.graphics.drawable.AnimationDrawable;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -10,11 +11,14 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.transition.TransitionManager;
+import android.view.animation.Animation;
 
 
 public class dealMainActivity extends ActionBarActivity {
@@ -22,7 +26,7 @@ public class dealMainActivity extends ActionBarActivity {
     ImageButton imgButton;
     Button button;
     ImageButton couponButton;
-
+    ViewGroup restaurantsLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,12 +52,11 @@ public class dealMainActivity extends ActionBarActivity {
         button = (Button)findViewById(R.id.imageButton);
         /*ButtonPushedOnTouchListener touchListener = new ButtonPushedOnTouchListener(this);
         button.setOnTouchListener(touchListener);*/
-        button.setOnTouchListener(new View.OnTouchListener(){
+        button.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View arg0, MotionEvent arg1) {
-                ViewGroup layout = (ViewGroup)findViewById(R.id.restaurantsLayout);
-                TransitionManager.beginDelayedTransition(layout);
-                button.setSelected(arg1.getAction() == MotionEvent.ACTION_DOWN);
+                //moveButton();
+                button.setPressed(arg1.getAction() == MotionEvent.ACTION_DOWN);
                 return true;
             }
         });
@@ -67,9 +70,22 @@ public class dealMainActivity extends ActionBarActivity {
         });
 
 
-
+        /*restaurantsLayout = (ViewGroup)findViewById(R.id.restaurantsLayout);
+        restaurantsLayout.setOnTouchListener(new RelativeLayout.OnTouchListener(){
+            @Override
+            public boolean onTouch(View v, MotionEvent event){
+                moveButton();
+                return true;
+            }
+        });*/
     }
 
+    public void moveButton(){
+        /*View button = findViewById(R.id.imageButton);
+        Animation anim = AnimationUtils.loadAnimation(this,R.anim.push_button);
+        button.startAnimation(anim);*/
+        ((AnimationDrawable)findViewById(R.id.imageButton).getBackground()).start();
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
