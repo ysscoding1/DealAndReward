@@ -28,6 +28,7 @@ public class dealMainActivity extends ActionBarActivity {
     Button button;
     ImageButton couponButton;
     ViewGroup restaurantsLayout;
+    Typeface buttonTypeface;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,7 +51,10 @@ public class dealMainActivity extends ActionBarActivity {
             }
         });
 
+
         button = (Button)findViewById(R.id.restaurantButton);
+        buttonTypeface = Typeface.createFromAsset(getAssets(), "fonts/DancingScript-Regular.ttf");
+        button.setTypeface(buttonTypeface);
         button.setOnTouchListener(new ButtonPushedOnTouchListener(button));
         /*button.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -71,12 +75,18 @@ public class dealMainActivity extends ActionBarActivity {
         });
 
         button = (Button)findViewById(R.id.retailersButton);
+        buttonTypeface = Typeface.createFromAsset(getAssets(), "fonts/DroidSans.ttf");
+        button.setTypeface(buttonTypeface);
         button.setOnTouchListener(new ButtonPushedOnTouchListener(button));
 
         button = (Button)findViewById(R.id.servicesButton);
+        buttonTypeface = Typeface.createFromAsset(getAssets(), "fonts/GreatVibes-Regular.ttf");
+        button.setTypeface(buttonTypeface);
         button.setOnTouchListener(new ButtonPushedOnTouchListener(button));
 
         button = (Button)findViewById(R.id.otherButton);
+        buttonTypeface = Typeface.createFromAsset(getAssets(), "fonts/AlexBrush-Regular.ttf");
+        button.setTypeface(buttonTypeface);
         button.setOnTouchListener(new ButtonPushedOnTouchListener(button));
 
         /*restaurantsLayout = (ViewGroup)findViewById(R.id.restaurantsLayout);

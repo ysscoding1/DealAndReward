@@ -6,4 +6,8 @@
     <string name="title_activity_coupon">CouponActivity</string>
     <string name="title_activity_selected_coupon">SelectedCoupon</string>
     <string name="title_activity_wallet">WalletActivity</string>
+    <string name="restaurants">Restaurants</string>
+    <string name="retailers">Retailers</string>
+    <string name="services">Services</string>
+    <string name="other">Other</string>
 </resources>
