@@ -56,13 +56,13 @@
 
         <LinearLayout android:id="@+id/restaurantsLayout"
             android:orientation="vertical"
-            android:layout_width="match_parent"
+            android:layout_width="1200px"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:paddingBottom="5dip"
             android:paddingTop="5dp">
-            <Button android:id="@+id/imageButton"
-                android:layout_width="match_parent"
+            <Button android:id="@+id/restaurantButton"
+                android:layout_width="1200px"
                 android:layout_height="200px"
                 android:background="@drawable/button_effect"
                 android:paddingBottom="5dp"
@@ -90,42 +90,72 @@
 
         <LinearLayout
             android:orientation="vertical"
-            android:layout_width="match_parent"
+            android:layout_width="1200px"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:paddingBottom="5dip">
-            <ImageButton
+            <Button android:id="@+id/retailersButton"
+                android:layout_width="1200px"
+                android:layout_height="200px"
+                android:background="@drawable/button_effect"
+                android:paddingBottom="5dp"
+                android:height="200px"
+                android:typeface="sans"
+                android:text="RETAILERS"
+                android:textSize="35sp"
+                android:textColor="#FFFFFF"/>
+            <!--<ImageButton
                 android:layout_width="match_parent"
                 android:layout_height="250px"
                 android:id="@+id/imageButton2"
                 android:src="@drawable/retailers"
-                android:focusableInTouchMode="true"/>
+                android:focusableInTouchMode="true"/>-->
         </LinearLayout>
 
         <LinearLayout
             android:orientation="vertical"
-            android:layout_width="match_parent"
+            android:layout_width="1200px"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:paddingBottom="5dip">
-            <ImageButton
+            <Button android:id="@+id/servicesButton"
+                android:layout_width="1200px"
+                android:layout_height="200px"
+                android:background="@drawable/button_effect"
+                android:paddingBottom="5dp"
+                android:height="200px"
+                android:typeface="sans"
+                android:text="SERVICES"
+                android:textSize="35sp"
+                android:textColor="#FFFFFF"/>
+            <!--<ImageButton
                 android:layout_width="match_parent"
                 android:layout_height="250px"
                 android:id="@+id/imageButton3"
-                android:src="@drawable/services"/>
+                android:src="@drawable/services"/> -->
         </LinearLayout>
 
         <LinearLayout
             android:orientation="vertical"
-            android:layout_width="match_parent"
+            android:layout_width="1200px"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:paddingBottom="5dip">
-            <ImageButton
+            <Button android:id="@+id/otherButton"
+                android:layout_width="1200px"
+                android:layout_height="200px"
+                android:background="@drawable/button_effect"
+                android:paddingBottom="5dp"
+                android:height="200px"
+                android:typeface="sans"
+                android:text="OTHER"
+                android:textSize="35sp"
+                android:textColor="#FFFFFF"/>
+            <!--<ImageButton
                 android:layout_width="match_parent"
                 android:layout_height="250px"
                 android:id="@+id/imageButton4"
-                android:src="@drawable/other"/>
+                android:src="@drawable/other"/>-->
         </LinearLayout>
 
         <LinearLayout

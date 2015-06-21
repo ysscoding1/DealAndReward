@@ -9,62 +9,38 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
 import android.view.ViewGroup.MarginLayoutParams;
+import android.widget.Button;
 import android.widget.RelativeLayout;
 
 public class ButtonPushedOnTouchListener implements OnTouchListener
 {
+    final Button button;
 
-    private float mPrevX;
-    private float mPrevY;
-
-    public dealMainActivity mainActivity;
-    public ButtonPushedOnTouchListener(dealMainActivity mainActivity1) {
-        mainActivity = mainActivity1;
+    public ButtonPushedOnTouchListener(final Button button) {
+        super();
+        this.button = button;
     }
+    public boolean onTouch(View v, MotionEvent event)
+    {
 
-    @Override
-    public boolean onTouch(View view, MotionEvent event) {
-        float currX,currY;
-        int action = event.getAction();
-        switch (action ) {
-            case MotionEvent.ACTION_DOWN: {
-
-                currX = event.getX();
-                currY = event.getY();
-                MarginLayoutParams marginParams = new MarginLayoutParams(view.getLayoutParams());
-                marginParams.setMargins((int)(currX - 5), (int)(currY - 5),0, 0);
-                RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(marginParams);
-                view.setLayoutParams(layoutParams);
+        switch(event.getAction()){
+            case MotionEvent.ACTION_DOWN:
+                //button.setPressed(true);
+                button.setPadding(button.getPaddingLeft(), button.getPaddingTop() + 10,
+                        button.getPaddingRight(), button.getPaddingBottom());
                 break;
-            }
 
             case MotionEvent.ACTION_MOVE:
-            {
-
-                /*currX = event.getRawX();
-                currY = event.getRawY();
-
-
-                MarginLayoutParams marginParams = new MarginLayoutParams(view.getLayoutParams());
-                marginParams.setMargins((int)(currX - mPrevX), (int)(currY - mPrevY),0, 0);
-                RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(marginParams);
-                view.setLayoutParams(layoutParams);
-
-                */
-                break;
-            }
-
-
-
-            case MotionEvent.ACTION_CANCEL:
+                // touch move code
                 break;
 
             case MotionEvent.ACTION_UP:
-
+                //button.setPressed(false);
+                button.setPadding(button.getPaddingLeft(), button.getPaddingTop() - 10,
+                        button.getPaddingRight(), button.getPaddingBottom());
                 break;
         }
-
-        return true;
+        return false;
     }
-
 }
+

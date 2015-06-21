@@ -6,6 +6,7 @@ import android.graphics.Typeface;
 import android.graphics.drawable.AnimationDrawable;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -49,26 +50,34 @@ public class dealMainActivity extends ActionBarActivity {
             }
         });
 
-        button = (Button)findViewById(R.id.imageButton);
-        /*ButtonPushedOnTouchListener touchListener = new ButtonPushedOnTouchListener(this);
-        button.setOnTouchListener(touchListener);*/
-        button.setOnTouchListener(new View.OnTouchListener() {
+        button = (Button)findViewById(R.id.restaurantButton);
+        button.setOnTouchListener(new ButtonPushedOnTouchListener(button));
+        /*button.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View arg0, MotionEvent arg1) {
-                moveButton();
+                switch()
+                //button.setPadding(0,0,0,10);
+                button.setGravity(Gravity.BOTTOM);
                 button.setPressed(arg1.getAction() == MotionEvent.ACTION_DOWN);
                 return true;
             }
-        });
+        });*/
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent i = new Intent(dealMainActivity.this, CouponActivity.class);
                 startActivity(i);
             }
         });
 
+        button = (Button)findViewById(R.id.retailersButton);
+        button.setOnTouchListener(new ButtonPushedOnTouchListener(button));
+
+        button = (Button)findViewById(R.id.servicesButton);
+        button.setOnTouchListener(new ButtonPushedOnTouchListener(button));
+
+        button = (Button)findViewById(R.id.otherButton);
+        button.setOnTouchListener(new ButtonPushedOnTouchListener(button));
 
         /*restaurantsLayout = (ViewGroup)findViewById(R.id.restaurantsLayout);
         restaurantsLayout.setOnTouchListener(new RelativeLayout.OnTouchListener(){
@@ -80,11 +89,11 @@ public class dealMainActivity extends ActionBarActivity {
         });*/
     }
 
-    public void moveButton(){
+    /*public void moveButton(){
         View button = findViewById(R.id.imageButton);
         Animation anim = AnimationUtils.loadAnimation(this,R.anim.push_button);
         button.startAnimation(anim);
-    }
+    }*/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
