@@ -13,49 +13,41 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_alignParentEnd="true"
-            android:id="@+id/mainLevel">
-
-            <TableLayout
+            android:id="@+id/header"
+            android:background="#EEEEEE">
+            <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:stretchColumns="1"
-                android:gravity="center"
-                android:paddingLeft="20dip"
-                android:paddingRight="20dip" >
+                android:layout_gravity="center_horizontal">
+                <ImageView
+                    android:layout_width="500px"
+                    android:layout_height="250px"
+                    android:layout_gravity="center_horizontal"
+                    android:id="@+id/image1"
+                    android:src="@drawable/cap1logotransparent">
+                </ImageView>
+                <TextView
+                    android:id="@+id/headerText"
+                    android:layout_width="500px"
+                    android:layout_height="320px"
+                    android:layout_gravity="center_horizontal"
+                    android:textAlignment="center"
+                    android:textSize="13sp"
+                    android:textColor="#000000"
+                    android:text="Welcome Back Richard!\nQuick Tip!\nTap your profile pic to open the menu!">
+                </TextView>
+            </LinearLayout>
+        </LinearLayout>
 
-            <TableRow>
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal">
-                    <ImageView
-                        android:layout_width="500px"
-                        android:layout_height="250px"
-                        android:id="@+id/image1"
-                        android:src="@drawable/c1"/>
-                </LinearLayout>
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal">
-
-                    <TextView
-                        android:layout_width="500px"
-                        android:layout_height="250px"
-                        android:id="@+id/text1"
-                        android:text="@string/dealNRewardHeader"
-                        android:textStyle="bold"
-                        android:textColor="#ff00ff"
-                        android:textColorHighlight="#000000"
-                        android:textIsSelectable="false"
-                        android:textSize="18sp"/>
-                </LinearLayout>
-            </TableRow>
-            </TableLayout>
-
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/header"
+            android:layout_marginTop="140px"
+            android:id="@+id/mainLevel">
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="1200px"
@@ -68,9 +60,8 @@
                     android:text="@string/restaurants"
                     android:textAllCaps="false"
                     android:textColor="#FFFFFF"
-                    android:textSize="40sp"
-                    android:alpha="125"
-                    android:background="@drawable/smallrestaurantoverlay">
+                    android:textSize="15sp"
+                    android:background="@drawable/res2">
                 </Button>
             </LinearLayout>
 
@@ -214,66 +205,86 @@
                 android:paddingLeft="20dip"
                 android:paddingRight="20dip" >
 
-            <TableRow>
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:paddingLeft="10dip"
-                    android:paddingRight="10dip" >
-                    <ImageButton
-                        android:layout_width="300px"
-                        android:layout_height="250px"
-                        android:background="@drawable/share"
-                        android:id="@+id/icon1"/>
+                <TableRow>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:paddingLeft="10dip"
+                        android:paddingRight="10dip" >
+                        <ImageButton
+                            android:layout_width="300px"
+                            android:layout_height="250px"
+                            android:background="@drawable/share"
+                            android:id="@+id/icon1"/>
                         <!--android:src="@drawable/share"/>-->
                     </LinearLayout>
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:paddingLeft="10dip"
-                    android:paddingRight="10dip" >
-                    <ImageButton
-                        android:layout_width="300px"
-                        android:layout_height="250px"
-                        android:adjustViewBounds="true"
-                        android:scaleType="centerInside"
-                        android:background="@drawable/money"
-                        android:id="@+id/icon2"/>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:paddingLeft="10dip"
+                        android:paddingRight="10dip" >
+                        <ImageButton
+                            android:layout_width="300px"
+                            android:layout_height="250px"
+                            android:adjustViewBounds="true"
+                            android:scaleType="centerInside"
+                            android:background="@drawable/money"
+                            android:id="@+id/icon2"/>
                     </LinearLayout>
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:paddingLeft="10dip"
-                    android:paddingRight="10dip" >
-                    <ImageButton
-                        android:layout_width="300px"
-                        android:layout_height="250px"
-                        android:adjustViewBounds="true"
-                        android:scaleType="fitXY"
-                        android:background="@drawable/wallet"
-                        android:id="@+id/icon3"/>
-                </LinearLayout>
-                <!--<LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal">
-                    <ImageButton
-                        android:layout_width="300px"
-                        android:layout_height="300px"
-                        android:id="@+id/icon4"
-                        android:src="@drawable/homeicon"/>
-                </LinearLayout>-->
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:paddingLeft="10dip"
+                        android:paddingRight="10dip" >
+                        <ImageButton
+                            android:layout_width="300px"
+                            android:layout_height="250px"
+                            android:adjustViewBounds="true"
+                            android:scaleType="fitXY"
+                            android:background="@drawable/wallet"
+                            android:id="@+id/icon3"/>
+                    </LinearLayout>
+                    <!--<LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal">
+                        <ImageButton
+                            android:layout_width="300px"
+                            android:layout_height="300px"
+                            android:id="@+id/icon4"
+                            android:src="@drawable/homeicon"/>
+                    </LinearLayout>-->
 
-            </TableRow>
+                </TableRow>
             </TableLayout>
         </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/profileIcon"
+            android:layout_width="165px"
+            android:layout_height="165px"
+            android:layout_centerInParent="true"
+            android:layout_alignBottom="@id/header"
+            android:layout_marginBottom="-32dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/profileicon">
+        </ImageButton>
+        <!--<android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_alignBottom="@id/header"
+            android:layout_marginBottom="-32dp"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/profileicon"/>-->
 
     </RelativeLayout>
 </ScrollView>

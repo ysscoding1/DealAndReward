@@ -29,11 +29,18 @@ public class dealMainActivity extends ActionBarActivity {
     ImageButton couponButton;
     ViewGroup restaurantsLayout;
     Typeface buttonTypeface;
+    TextView textview;
+    Typeface headerTypeface;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //Facebook.sdkInitialize(getApplicationContext());
         setContentView(R.layout.activity_deal_main);
+
+        textview = (TextView) findViewById(R.id.headerText);
+        headerTypeface= Typeface.createFromAsset(getAssets(), "fonts/OpenSans-Light.ttf");
+        textview.setTypeface(headerTypeface);
+
 
         imgButton =(ImageButton)findViewById(R.id.icon1);
         imgButton.setOnTouchListener(new ButtonHighlighterOnTouchListener(imgButton));
@@ -53,7 +60,7 @@ public class dealMainActivity extends ActionBarActivity {
 
 
         button = (Button)findViewById(R.id.restaurantButton);
-        buttonTypeface = Typeface.createFromAsset(getAssets(), "fonts/DancingScript-Regular.ttf");
+        buttonTypeface = Typeface.createFromAsset(getAssets(), "fonts/OpenSans-Light.ttf");
         button.setTypeface(buttonTypeface);
         button.setOnTouchListener(new ButtonPushedOnTouchListener(button));
         /*button.setOnTouchListener(new View.OnTouchListener() {
@@ -75,17 +82,17 @@ public class dealMainActivity extends ActionBarActivity {
         });
 
         button = (Button)findViewById(R.id.retailersButton);
-        buttonTypeface = Typeface.createFromAsset(getAssets(), "fonts/DroidSans.ttf");
+        buttonTypeface = Typeface.createFromAsset(getAssets(), "fonts/OpenSans-Light.ttf");
         button.setTypeface(buttonTypeface);
         button.setOnTouchListener(new ButtonPushedOnTouchListener(button));
 
         button = (Button)findViewById(R.id.servicesButton);
-        buttonTypeface = Typeface.createFromAsset(getAssets(), "fonts/GreatVibes-Regular.ttf");
+        buttonTypeface = Typeface.createFromAsset(getAssets(), "fonts/OpenSans-Light.ttf");
         button.setTypeface(buttonTypeface);
         button.setOnTouchListener(new ButtonPushedOnTouchListener(button));
 
         button = (Button)findViewById(R.id.otherButton);
-        buttonTypeface = Typeface.createFromAsset(getAssets(), "fonts/AlexBrush-Regular.ttf");
+        buttonTypeface = Typeface.createFromAsset(getAssets(), "fonts/OpenSans-Light.ttf");
         button.setTypeface(buttonTypeface);
         button.setOnTouchListener(new ButtonPushedOnTouchListener(button));
 
