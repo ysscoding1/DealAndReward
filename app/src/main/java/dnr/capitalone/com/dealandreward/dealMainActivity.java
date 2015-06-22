@@ -96,6 +96,20 @@ public class dealMainActivity extends ActionBarActivity {
         button.setTypeface(buttonTypeface);
         button.setOnTouchListener(new ButtonPushedOnTouchListener(button));
 
+        button = (Button)findViewById(R.id.rewardsButton);
+        buttonTypeface = Typeface.createFromAsset(getAssets(), "fonts/OpenSans-Light.ttf");
+        button.setTypeface(buttonTypeface);
+        button.setOnTouchListener(new ButtonPushedOnTouchListener(button));
+
+        imgButton = (ImageButton)findViewById(R.id.walletButton);
+        imgButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(dealMainActivity.this, WalletActivity.class);
+                startActivity(i);
+            }
+        });
+
         /*restaurantsLayout = (ViewGroup)findViewById(R.id.restaurantsLayout);
         restaurantsLayout.setOnTouchListener(new RelativeLayout.OnTouchListener(){
             @Override

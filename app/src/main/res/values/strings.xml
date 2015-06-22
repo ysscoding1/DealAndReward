@@ -10,4 +10,8 @@
     <string name="retailers">Retailers</string>
     <string name="services">Services</string>
     <string name="other">Other</string>
+    <string name="share">Share</string>
+    <string name="money">Money</string>
+    <string name="wallet">Wallet</string>
+    <string name="rewards">Rewards</string>
 </resources>
