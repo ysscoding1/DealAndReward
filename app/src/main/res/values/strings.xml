@@ -13,5 +13,11 @@
     <string name="share">Share</string>
     <string name="money">Money</string>
     <string name="wallet">Wallet</string>
+    <string name="home">Home</string>
     <string name="rewards">Rewards</string>
+    <string name="hm">$20 off\n H&amp;M</string>
+    <string name="starbucks">$10 off\n Starbucks</string>
+    <string name="walmart">$30 off\n Walmart</string>
+    <string name="pizzahut">Free Breadsticks\n Pizza Hut</string>
+    <string name="bestbuy">$20 off\n Bestbuy</string>
 </resources>
