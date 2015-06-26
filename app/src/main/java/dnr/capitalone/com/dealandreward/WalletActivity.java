@@ -25,6 +25,7 @@ public class WalletActivity extends ActionBarActivity {
         setContentView(R.layout.activity_coupon_wallet);
         //setContentView(R.layout.activity_wallet);
 
+        /* Body */
         drawable = getResources().getDrawable(R.drawable.hm_icon);
         drawable.setBounds(0, 0, (int) (drawable.getIntrinsicWidth() * 0.25),
                 (int) (drawable.getIntrinsicHeight() * 0.25));
@@ -61,7 +62,8 @@ public class WalletActivity extends ActionBarActivity {
         button.setCompoundDrawables(sd.getDrawable(), null, null, null); //set drawableLeft for example
 
 
-        imgButton =(ImageButton)findViewById(R.id.icon1);
+        /* Footer */
+        imgButton =(ImageButton)findViewById(R.id.shareButton);
         imgButton.setOnTouchListener(new ButtonHighlighterOnTouchListener(imgButton));
         imgButton.setOnClickListener(new View.OnClickListener() {
             @Override

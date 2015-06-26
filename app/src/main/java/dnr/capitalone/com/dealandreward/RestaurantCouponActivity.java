@@ -1,6 +1,21 @@
 package dnr.capitalone.com.dealandreward;
 
 import android.app.Activity;
+import android.content.Intent;
+
+import android.graphics.Typeface;
+import android.os.Bundle;
+import android.view.View;
+
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.model.LatLng;
+
+
+/**
+ * Created by RichardYan on 6/25/15.
+ */
+
+import android.app.Activity;
 import android.app.Fragment;
 import android.content.Intent;
 import android.location.Location;
@@ -28,16 +43,27 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 
-public class CouponActivity extends Activity{
+public class RestaurantCouponActivity extends Activity {
 
     GoogleMap map;
     static final LatLng HAMBURG = new LatLng(53.558, 9.927);
     static final LatLng KIEL = new LatLng(53.551, 9.993);
     View buttonView;
+    TextView textview;
+    Typeface headerTypeface;
+    ImageButton imgButton;
+    Button button;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_coupon);
+        setContentView(R.layout.activity_restaurant_coupons);
+         /* Header */
+        textview = (TextView) findViewById(R.id.headerText);
+        headerTypeface= Typeface.createFromAsset(getAssets(), "fonts/OpenSans-Light.ttf");
+        textview.setTypeface(headerTypeface);
+
         /*map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map))
                 .getMap();
 
@@ -56,7 +82,43 @@ public class CouponActivity extends Activity{
         buttonView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(CouponActivity.this, SelectedCoupon.class);
+                Intent i = new Intent(RestaurantCouponActivity.this, SelectedCoupon.class);
+                startActivity(i);
+            }
+        });
+
+        /* Footer */
+        imgButton =(ImageButton)findViewById(R.id.shareButton);
+        imgButton.setOnTouchListener(new ButtonHighlighterOnTouchListener(imgButton));
+        imgButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+              /*  Toast.makeText(getApplicationContext(), "You download is resumed", Toast.LENGTH_LONG).show();*/
+
+                Intent i = new Intent(Intent.ACTION_SEND);
+                i.setType("text/plain");
+                i.putExtra(Intent.EXTRA_SUBJECT, "Sharing URL");
+                i.putExtra(Intent.EXTRA_TEXT, "http://www.url.com");
+                startActivity(Intent.createChooser(i, "Share URL"));
+            }
+        });
+
+        imgButton = (ImageButton)findViewById(R.id.walletButton);
+        imgButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(RestaurantCouponActivity.this, WalletActivity.class);
+                startActivity(i);
+            }
+        });
+
+
+        imgButton = (ImageButton)findViewById(R.id.homeButton);
+        imgButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), dealMainActivity.class);
                 startActivity(i);
             }
         });

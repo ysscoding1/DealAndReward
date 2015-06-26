@@ -1,43 +1,39 @@
 package dnr.capitalone.com.dealandreward;
 
 import android.app.Activity;
-import android.app.Fragment;
 import android.content.Intent;
-import android.location.Location;
-import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.ActionBarActivity;
+import android.graphics.Typeface;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.google.android.gms.location.LocationListener;
-import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapFragment;
-import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
-import com.google.android.gms.maps.model.MarkerOptions;
 
-
-public class CouponActivity extends Activity{
+/**
+ * Created by RichardYan on 6/25/15.
+ */
+public class RetailerCouponActivity extends Activity{
 
     GoogleMap map;
     static final LatLng HAMBURG = new LatLng(53.558, 9.927);
     static final LatLng KIEL = new LatLng(53.551, 9.993);
     View buttonView;
+    TextView textview;
+    Typeface headerTypeface;
+    ImageButton imgButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_coupon);
+        setContentView(R.layout.activity_retailer_coupons);
+
+         /* Header */
+        textview = (TextView) findViewById(R.id.headerText);
+        headerTypeface= Typeface.createFromAsset(getAssets(), "fonts/OpenSans-Light.ttf");
+        textview.setTypeface(headerTypeface);
+
         /*map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map))
                 .getMap();
 
@@ -56,7 +52,43 @@ public class CouponActivity extends Activity{
         buttonView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(CouponActivity.this, SelectedCoupon.class);
+                Intent i = new Intent(RetailerCouponActivity.this, SelectedCoupon.class);
+                startActivity(i);
+            }
+        });
+
+        /* Footer */
+        imgButton =(ImageButton)findViewById(R.id.shareButton);
+        imgButton.setOnTouchListener(new ButtonHighlighterOnTouchListener(imgButton));
+        imgButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+              /*  Toast.makeText(getApplicationContext(), "You download is resumed", Toast.LENGTH_LONG).show();*/
+
+                Intent i = new Intent(Intent.ACTION_SEND);
+                i.setType("text/plain");
+                i.putExtra(Intent.EXTRA_SUBJECT, "Sharing URL");
+                i.putExtra(Intent.EXTRA_TEXT, "http://www.url.com");
+                startActivity(Intent.createChooser(i, "Share URL"));
+            }
+        });
+
+        imgButton = (ImageButton)findViewById(R.id.walletButton);
+        imgButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(RetailerCouponActivity.this, WalletActivity.class);
+                startActivity(i);
+            }
+        });
+
+
+        imgButton = (ImageButton)findViewById(R.id.homeButton);
+        imgButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), dealMainActivity.class);
                 startActivity(i);
             }
         });

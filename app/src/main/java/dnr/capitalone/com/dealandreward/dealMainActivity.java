@@ -37,12 +37,70 @@ public class dealMainActivity extends ActionBarActivity {
         //Facebook.sdkInitialize(getApplicationContext());
         setContentView(R.layout.activity_deal_main);
 
+        /* Header */
         textview = (TextView) findViewById(R.id.headerText);
         headerTypeface= Typeface.createFromAsset(getAssets(), "fonts/OpenSans-Light.ttf");
         textview.setTypeface(headerTypeface);
 
+        /* Body */
+        button = (Button)findViewById(R.id.restaurantButton);
+        buttonTypeface = Typeface.createFromAsset(getAssets(), "fonts/OpenSans-Light.ttf");
+        button.setTypeface(buttonTypeface);
+        button.setOnTouchListener(new ButtonPushedOnTouchListener(button));
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(dealMainActivity.this, RestaurantCouponActivity.class);
+                startActivity(i);
+            }
+        });
 
-        imgButton =(ImageButton)findViewById(R.id.icon1);
+        button = (Button)findViewById(R.id.retailersButton);
+        buttonTypeface = Typeface.createFromAsset(getAssets(), "fonts/OpenSans-Light.ttf");
+        button.setTypeface(buttonTypeface);
+        button.setOnTouchListener(new ButtonPushedOnTouchListener(button));
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(dealMainActivity.this, RetailerCouponActivity.class);
+                startActivity(i);
+            }
+        });
+
+
+        button = (Button)findViewById(R.id.servicesButton);
+        buttonTypeface = Typeface.createFromAsset(getAssets(), "fonts/OpenSans-Light.ttf");
+        button.setTypeface(buttonTypeface);
+        button.setOnTouchListener(new ButtonPushedOnTouchListener(button));
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(dealMainActivity.this, ServiceCouponActivity.class);
+                startActivity(i);
+            }
+        });
+
+
+        button = (Button)findViewById(R.id.otherButton);
+        buttonTypeface = Typeface.createFromAsset(getAssets(), "fonts/OpenSans-Light.ttf");
+        button.setTypeface(buttonTypeface);
+        button.setOnTouchListener(new ButtonPushedOnTouchListener(button));
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(dealMainActivity.this, OtherCouponActivity.class);
+                startActivity(i);
+            }
+        });
+
+        button = (Button)findViewById(R.id.rewardsButton);
+        buttonTypeface = Typeface.createFromAsset(getAssets(), "fonts/OpenSans-Light.ttf");
+        button.setTypeface(buttonTypeface);
+        button.setOnTouchListener(new ButtonPushedOnTouchListener(button));
+
+
+        /* Footer */
+        imgButton =(ImageButton)findViewById(R.id.shareButton);
         imgButton.setOnTouchListener(new ButtonHighlighterOnTouchListener(imgButton));
         imgButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,49 +115,6 @@ public class dealMainActivity extends ActionBarActivity {
                 startActivity(Intent.createChooser(i, "Share URL"));
             }
         });
-
-
-        button = (Button)findViewById(R.id.restaurantButton);
-        buttonTypeface = Typeface.createFromAsset(getAssets(), "fonts/OpenSans-Light.ttf");
-        button.setTypeface(buttonTypeface);
-        button.setOnTouchListener(new ButtonPushedOnTouchListener(button));
-        /*button.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View arg0, MotionEvent arg1) {
-                switch()
-                //button.setPadding(0,0,0,10);
-                button.setGravity(Gravity.BOTTOM);
-                button.setPressed(arg1.getAction() == MotionEvent.ACTION_DOWN);
-                return true;
-            }
-        });*/
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(dealMainActivity.this, CouponActivity.class);
-                startActivity(i);
-            }
-        });
-
-        button = (Button)findViewById(R.id.retailersButton);
-        buttonTypeface = Typeface.createFromAsset(getAssets(), "fonts/OpenSans-Light.ttf");
-        button.setTypeface(buttonTypeface);
-        button.setOnTouchListener(new ButtonPushedOnTouchListener(button));
-
-        button = (Button)findViewById(R.id.servicesButton);
-        buttonTypeface = Typeface.createFromAsset(getAssets(), "fonts/OpenSans-Light.ttf");
-        button.setTypeface(buttonTypeface);
-        button.setOnTouchListener(new ButtonPushedOnTouchListener(button));
-
-        button = (Button)findViewById(R.id.otherButton);
-        buttonTypeface = Typeface.createFromAsset(getAssets(), "fonts/OpenSans-Light.ttf");
-        button.setTypeface(buttonTypeface);
-        button.setOnTouchListener(new ButtonPushedOnTouchListener(button));
-
-        button = (Button)findViewById(R.id.rewardsButton);
-        buttonTypeface = Typeface.createFromAsset(getAssets(), "fonts/OpenSans-Light.ttf");
-        button.setTypeface(buttonTypeface);
-        button.setOnTouchListener(new ButtonPushedOnTouchListener(button));
 
         imgButton = (ImageButton)findViewById(R.id.walletButton);
         imgButton.setOnClickListener(new View.OnClickListener() {

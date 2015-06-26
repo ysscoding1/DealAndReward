@@ -41,6 +41,25 @@
             android:label="@string/title_activity_coupon" >
         </activity>
 
+        <activity
+            android:name=".RestaurantCouponActivity"
+            android:label="@string/restaurant_activity_coupon" >
+        </activity>
+
+        <activity
+            android:name=".RetailerCouponActivity"
+            android:label="@string/retailer_activity_coupon" >
+        </activity>
+
+        <activity
+            android:name=".ServiceCouponActivity"
+            android:label="@string/service_activity_coupon" >
+        </activity>
+
+        <activity
+            android:name=".OtherCouponActivity"
+            android:label="@string/other_activity_coupon" >
+        </activity>
         <!--
             <meta-data
             android:name="com.google.android.gms.version"

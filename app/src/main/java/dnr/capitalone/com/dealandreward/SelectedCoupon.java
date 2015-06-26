@@ -11,7 +11,7 @@ public class SelectedCoupon extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_selected_coupon);
+        setContentView(R.layout.activity_selected_coupons);
     }
 
     @Override
